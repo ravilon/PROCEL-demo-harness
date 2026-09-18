@@ -18,7 +18,7 @@ services:
       MQTT_URL: mqtt://mqtt:1883
       PUBLISH_API_KEY: ${PUBLISH_API_KEY:-}
     ports:
-      - "127.0.0.1:${HTTP_PORT:-3000}:3000"
+      - "${HTTP_PORT:-3000}:3000"
     depends_on:
       mqtt:
         condition: service_healthy

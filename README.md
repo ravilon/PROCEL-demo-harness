@@ -14,7 +14,7 @@ Copie `.env.example` para `.env`, preencha `PUBLISH_API_KEY` com um valor longo 
 docker compose up -d --build
 ```
 
-O HTTP publisher escuta em `http://localhost:3000`. O Mosquitto escuta na porta `1883` do host e os containers se comunicam pela rede Docker. A porta MQTT fica acessivel nas interfaces do servidor para que um Telemetry remoto possa conectar; restrinja TCP 1883 no firewall a origens autorizadas. O `.env` deste projeto pode conter `PROCEL_MQTT_HOST` para o console antigo, mas o HTTP publisher usa `MQTT_URL=mqtt://mqtt:1883` dentro do Compose.
+O HTTP publisher escuta em `http://<servidor>:3000`. O Mosquitto escuta na porta `1883` do host e os containers se comunicam pela rede Docker. As portas MQTT e HTTP ficam acessiveis nas interfaces do servidor; restrinja TCP 1883 e 3000 no firewall a origens autorizadas. O `.env` deste projeto pode conter `PROCEL_MQTT_HOST` para o console antigo, mas o HTTP publisher usa `MQTT_URL=mqtt://mqtt:1883` dentro do Compose.
 
 Envie um evento:
 
