@@ -1,0 +1,12 @@
+{
+  "name": "procel-demo-harness",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "mqtt": "5.16.0"
+  }
+}

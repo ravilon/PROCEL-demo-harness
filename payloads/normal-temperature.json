@@ -1,0 +1,9 @@
+﻿{
+  "messageId": "demo-normal-example",
+  "sourceTimestamp": "2026-09-18T12:00:00Z",
+  "payload": {
+    "messageId": "demo-normal-example",
+    "timestamp": "2026-09-18T12:00:00Z",
+    "temperature": 24.0
+  }
+}

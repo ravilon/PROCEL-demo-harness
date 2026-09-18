@@ -1,0 +1,20 @@
+services:
+  mqtt:
+    image: eclipse-mosquitto:2
+    ports:
+      - "127.0.0.1:${PROCEL_MQTT_PORT:-1883}:1883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mqtt_data:/mosquitto/data
+  publisher:
+    build: .
+    environment:
+      MQTT_URL: mqtt://mqtt:1883
+      PUBLISH_API_KEY: ${PUBLISH_API_KEY:-}
+    ports:
+      - "127.0.0.1:${HTTP_PORT:-3000}:3000"
+    depends_on:
+      - mqtt
+
+volumes:
+  mqtt_data:
