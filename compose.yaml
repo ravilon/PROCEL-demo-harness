@@ -6,15 +6,22 @@ services:
     volumes:
       - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
       - mqtt_data:/mosquitto/data
+    healthcheck:
+      test: ["CMD", "mosquitto_pub", "-h", "127.0.0.1", "-t", "harness/health", "-m", "ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   publisher:
     build: .
     environment:
+      PORT: 3000
       MQTT_URL: mqtt://mqtt:1883
       PUBLISH_API_KEY: ${PUBLISH_API_KEY:-}
     ports:
       - "127.0.0.1:${HTTP_PORT:-3000}:3000"
     depends_on:
-      - mqtt
+      mqtt:
+        condition: service_healthy
 
 volumes:
   mqtt_data:

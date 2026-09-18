@@ -48,6 +48,12 @@ O app publica o envelope em `procel/telemetry/v1/demo/sensor-1/events`, com QoS 
 
 O Telemetry e apenas o subscriber; Mosquitto e o broker separado deste Compose. O perfil `staging` do Telemetry liga TLS por padrao, por isso a configuracao acima desliga TLS para a conexao privada deste broker de teste. Em producao, configure autenticacao e TLS no broker.
 
+### Se o publisher nao conectar ao broker
+
+- `HTTP publisher listening on 1883`: a variavel `PORT` do container publisher foi configurada como porta MQTT. O HTTP deve escutar em `3000`; o Compose deste repositorio define `PORT=3000`.
+- `getaddrinfo EAI_AGAIN mqtt`: o hostname `mqtt` nao esta resolvendo no container publisher. Confira se o recurso implantado no Coolify usa **Docker Compose** com os dois servicos `mqtt` e `publisher` ativos. Se o publisher foi implantado sozinho como uma Application Node/Dockerfile, `mqtt` nao existe na rede dele: implante o Compose completo ou configure `MQTT_URL` com o hostname interno real de um broker na rede compartilhada.
+- `connack timeout`: confira se o servico `mqtt` esta saudavel e se o publisher usa `mqtt://mqtt:1883` quando os dois estao no mesmo Compose. O endpoint HTTP `GET /health` retorna `mqttConnected: true` quando a conexao estiver pronta.
+
 ## Console MQTT opcional
 
 O script `mqtt-console.ps1` ainda permite publicar diretamente em um broker. Para este Compose local:
