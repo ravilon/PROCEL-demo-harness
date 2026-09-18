@@ -2,3 +2,4 @@
 state/*.json
 payloads/demo-*.json
 node_modules/
+test.ps1
