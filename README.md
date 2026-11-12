@@ -37,6 +37,34 @@ Se a chave estiver apenas no arquivo `.env`, atribua-a tambem ao `$env:PUBLISH_A
 
 O app publica o envelope em `procel/telemetry/v1/demo/sensor-1/events`, com QoS 1 e sem retained. `202` confirma o ACK do broker, nao a persistencia no Telemetry. `GET /health` mostra se a conexao com o broker esta ativa. Requisicoes a `/publish` exigem `Authorization: Bearer <PUBLISH_API_KEY>`.
 
+## Campus demonstrativo e carga reproduzivel
+
+`simulate-demo.mjs` gera telemetria deterministica para duas salas, com presença, iluminação e temperatura variando ao longo de uma aula simulada. Cada mensagem tem ID estável por semente e sequência, timestamp de origem, ID de sala e anotações locais de aula, missão e gatilho. As anotações de aula/missão/gatilho são metadados do experimento; elas não criam registros de aula, atividades ou eventos no backend.
+
+Antes de publicar, cadastre no backend as salas e sensores virtuais indicados pelo próprio arquivo (`DEMO_TCC_SALA_01`, `DEMO_TCC_SALA_02` e sensores correspondentes), com o produtor `demo-tcc` e os parâmetros esperados pelo perfil de integração do Telemetry. O exemplo de sensor `IDEALSENSOR_347` não é usado. As chaves de sensor no gerador devem corresponder aos IDs cadastrados. Não envie a carga ao publisher remoto enquanto esses sensores não estiverem provisionados.
+
+Configure a chave somente no ambiente do terminal, sem colocá-la no repositório:
+
+```powershell
+$env:PUBLISH_API_KEY = '<chave do publisher>'
+$env:PUBLISH_URL = 'http://localhost:3000/publish'
+npm run simulate -- --count 1000 --rate 10 --seed 20261112 --output runs/tcc-piloto-01
+```
+
+Para gerar e conferir a forma dos registros sem rede, chave ou publicação, acrescente `--dry-run`.
+
+O gerador limita a taxa e envia uma mensagem por vez. `events.ndjson` guarda cada tentativa, status HTTP e latência cliente→publisher; `summary.json` informa taxa, percentis e intervalo Wilson de 95% da proporção de ACKs; `manifest.json` guarda parâmetros e hash SHA-256. Um HTTP `202` e essas latências representam somente o ACK MQTT do publisher. Para medir ingestão real, correlacione `messageId` com confirmação do Telemetry/banco e compute separadamente atraso de ponta a ponta, perda, duplicatas e taxa efetivamente persistida. Repetições independentes devem usar sementes diferentes e registrar carga, duração e versão do backend.
+
+### Remoção e isolamento
+
+Os arquivos locais de uma execução podem ser apagados com:
+
+```powershell
+.\remove-demo-run.ps1 -RunDirectory '.\runs\tcc-piloto-01'
+```
+
+Isso remove somente artefatos locais do diretório validado. Mensagens já publicadas e dados persistidos pelo Telemetry não são removidos por esse script. Para evitar poluir dados reais, rode o campus demonstrativo em uma instância/banco de demonstração isolado que possa ser descartado integralmente após o TCC. Se for obrigatório compartilhar o banco, o backend precisa oferecer uma rotina administrativa de expurgo por prefixo que percorra medições e dependências; não apague linhas diretamente nem use sensores existentes.
+
 ## Implantar no Coolify com Telemetry remoto
 
 1. Crie uma Application do repositorio usando o build pack **Docker Compose** e `compose.yaml`.
