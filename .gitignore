@@ -4,3 +4,4 @@ payloads/demo-*.json
 node_modules/
 runs/
 test.ps1
+.env.hostinger-test.local

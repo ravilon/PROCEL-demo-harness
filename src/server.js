@@ -8,6 +8,10 @@ if (!apiKey) {
 }
 
 const mqttUrl = process.env.MQTT_URL || 'mqtt://mqtt:1883';
+const mqttTopicRoot = process.env.MQTT_TOPIC_ROOT || 'proben/telemetry/v1';
+if (!mqttTopicRoot.split('/').every(validLevel)) {
+  throw new Error('MQTT_TOPIC_ROOT must contain only valid MQTT topic levels');
+}
 const client = mqtt.connect(mqttUrl, {
   protocolVersion: 5,
   reconnectPeriod: 1000,
@@ -73,7 +77,7 @@ function makeEvent(body) {
       !Number.isFinite(Date.parse(body.sourceTimestamp)))) {
     throw new Error('sourceTimestamp must be a valid timestamp string');
   }
-  const topic = `procel/telemetry/v1/${body.producerId}/${body.sensorId}/events`;
+  const topic = `${mqttTopicRoot}/${body.producerId}/${body.sensorId}/events`;
   const envelope = {
     messageId: body.messageId || randomUUID(),
     sensorId: body.sensorId,

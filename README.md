@@ -35,13 +35,15 @@ Se a chave estiver apenas no arquivo `.env`, atribua-a tambem ao `$env:PUBLISH_A
 }
 ```
 
-O app publica o envelope em `procel/telemetry/v1/demo/sensor-1/events`, com QoS 1 e sem retained. `202` confirma o ACK do broker, nao a persistencia no Telemetry. `GET /health` mostra se a conexao com o broker esta ativa. Requisicoes a `/publish` exigem `Authorization: Bearer <PUBLISH_API_KEY>`.
+O app publica o envelope em `proben/telemetry/v1/{producerId}/{sensorId}/events` por padrão, com QoS 1 e sem retained. `MQTT_TOPIC_ROOT` permite alinhar o prefixo ao filtro do subscriber implantado. `202` confirma o ACK do broker, não a persistência no Telemetry. `GET /health` mostra se a conexão com o broker está ativa. Requisições a `/publish` exigem `Authorization: Bearer <PUBLISH_API_KEY>`.
 
 ## Campus demonstrativo e carga reproduzivel
 
-`simulate-demo.mjs` gera telemetria deterministica para duas salas, com presença, iluminação e temperatura variando ao longo de uma aula simulada. Cada mensagem tem ID estável por semente e sequência, timestamp de origem, ID de sala e anotações locais de aula, missão e gatilho. As anotações de aula/missão/gatilho são metadados do experimento; elas não criam registros de aula, atividades ou eventos no backend.
+`simulate-demo.mjs` gera telemetria para a sala existente `DEMO-ROOM-01` e o sensor `IDEALSENSOR_347` do campus de demonstração no ambiente de teste. Cada mensagem tem ID estável por semente e sequência, timestamp de origem e o payload esperado pelo perfil `IDEAL_SENSOR` (`messageId`, `timestamp`, `temperature`, `light`, `presence`). Use `DEMO_ROOM_ID` e `DEMO_SENSOR_ID` para selecionar outros recursos que já estejam cadastrados.
 
-Antes de publicar, cadastre no backend as salas e sensores virtuais indicados pelo próprio arquivo (`DEMO_TCC_SALA_01`, `DEMO_TCC_SALA_02` e sensores correspondentes), com o produtor `demo-tcc` e os parâmetros esperados pelo perfil de integração do Telemetry. O exemplo de sensor `IDEALSENSOR_347` não é usado. As chaves de sensor no gerador devem corresponder aos IDs cadastrados. Não envie a carga ao publisher remoto enquanto esses sensores não estiverem provisionados.
+O módulo `room-rules.mjs` emula localmente os fluxogramas de ocupação/atribuição e de ar-condicionado/ventilação. Ele registra em `events.ndjson` as decisões de uso agendado, ocupação, confirmação do professor, check-in QR, estado do AC, conforto adaptativo, janelas, ruído, CO₂, setpoint e alertas. Os valores do AC, janelas, ruído e CO₂ são somente entradas da emulação local; não são enviados como telemetria nem avaliados pelas regras do backend. Cada registro contém a trilha de regras e sua proveniência.
+
+A referência da temperatura neutra usa `Tn = 17.8 + 0.31 × Temed` e a faixa `Tn ± 3.5 °C`. O gerador usa `Temed = 17.5 °C` como valor sintético fixo, não como histórico real ou leitura da WeatherAPI. As faixas e pontos de setpoint/AC aparecem com conectores ambíguos no diagrama: o simulador guarda os predicados e os valores de pontos apresentados, mas não inventa um total. O diagrama de ocupação não define unidade para `TOTIME`, `COUNT` e `CICLO10`; por isso as sequências são registradas sem afirmar que representem minutos ou tempo real. As anotações de aula, missão e gatilho não criam registros de aula, atividades ou eventos no backend.
 
 Configure a chave somente no ambiente do terminal, sem colocá-la no repositório:
 
@@ -87,7 +89,7 @@ O Telemetry e apenas o subscriber; Mosquitto e o broker separado deste Compose. 
 O script `mqtt-console.ps1` ainda permite publicar diretamente em um broker. Para este Compose local:
 
 ```powershell
-.\mqtt-console.ps1 -HostName localhost -Topic 'procel/telemetry/v1/demo/sensor-1/events' -PayloadFile 'payloads/normal-temperature.json'
+.\mqtt-console.ps1 -HostName localhost -Topic 'proben/telemetry/v1/demo/sensor-1/events' -PayloadFile 'payloads/normal-temperature.json'
 ```
 
 Ele usa `mosquitto_pub` local, se instalado, ou executa o cliente dentro do servico `mqtt` deste Compose. Para broker externo, configure `PROCEL_MQTT_HOST` e `PROCEL_MQTT_PORT` em `.env`.
