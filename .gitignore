@@ -2,6 +2,9 @@
 state/*.json
 payloads/demo-*.json
 node_modules/
-runs/
+!/runs/
+runs/*
+!/runs/tcc-20261112-02-pilot1/
+!runs/tcc-20261112-02-pilot1/**
 test.ps1
 .env.hostinger-test.local

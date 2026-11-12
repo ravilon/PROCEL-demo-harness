@@ -1,0 +1,42 @@
+[
+    {
+        "roomId":  "TCCDEMO-20261112-02-R01",
+        "sensorId":  "TCCDEMO-20261112-02-S01"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R02",
+        "sensorId":  "TCCDEMO-20261112-02-S02"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R03",
+        "sensorId":  "TCCDEMO-20261112-02-S03"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R04",
+        "sensorId":  "TCCDEMO-20261112-02-S04"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R05",
+        "sensorId":  "TCCDEMO-20261112-02-S05"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R06",
+        "sensorId":  "TCCDEMO-20261112-02-S06"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R07",
+        "sensorId":  "TCCDEMO-20261112-02-S07"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R08",
+        "sensorId":  "TCCDEMO-20261112-02-S08"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R09",
+        "sensorId":  "TCCDEMO-20261112-02-S09"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R10",
+        "sensorId":  "TCCDEMO-20261112-02-S10"
+    }
+]

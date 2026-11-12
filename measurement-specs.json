@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "sensorType": "TCC_DEMO_SENSOR_20261112_01",
+  "synthetic": true,
+  "physicalAccuracy": null,
+  "sampling": {
+    "targetRateAppliesTo": "all rooms combined",
+    "sourceTimestamp": "scheduled event time in UTC",
+    "duplicatePolicy": "unique messageId per producer and sensor",
+    "note": "This is a workload contract, not a calibration certificate or claim about a physical device."
+  },
+  "parameters": [
+    { "name": "temperature", "dataType": "NUMERIC", "unit": "Celsius", "meaning": "synthetic indoor air temperature", "validTestRange": [18, 30], "resolution": 0.1 },
+    { "name": "presence", "dataType": "BOOLEAN", "unit": null, "meaning": "room occupancy state; not identity or headcount" },
+    { "name": "light", "dataType": "BOOLEAN", "unit": null, "meaning": "lighting on/off state; not illuminance in lux" },
+    { "name": "ac_status", "dataType": "BOOLEAN", "unit": null, "meaning": "air conditioning operating state" },
+    { "name": "energy_ac", "dataType": "NUMERIC", "unit": "kWh", "meaning": "synthetic AC energy increment for this sample interval; derived from assumed 1.5 kW while on", "validTestRange": [0, 1], "resolution": 0.000001 },
+    { "name": "energy_lighting", "dataType": "NUMERIC", "unit": "kWh", "meaning": "synthetic lighting energy increment for this sample interval; derived from assumed 0.12 kW while on", "validTestRange": [0, 1], "resolution": 0.000001 },
+    { "name": "energy_room_circuit", "dataType": "NUMERIC", "unit": "kWh", "meaning": "synthetic AC plus lighting energy increment for this sample interval", "validTestRange": [0, 1], "resolution": 0.000001 },
+    { "name": "energy_total_room", "dataType": "NUMERIC", "unit": "kWh", "meaning": "synthetic total room energy increment, including an assumed 0.08 kW auxiliary load", "validTestRange": [0, 1], "resolution": 0.000001 },
+    { "name": "ac_setpoint_c", "dataType": "NUMERIC", "unit": "C", "meaning": "air conditioning target temperature", "validTestRange": [18, 30], "resolution": 0.5 },
+    { "name": "humidity_pct", "dataType": "NUMERIC", "unit": "%", "meaning": "relative humidity", "validTestRange": [20, 90], "resolution": 0.1 },
+    { "name": "noise_db", "dataType": "NUMERIC", "unit": "dB", "meaning": "simulated room noise level; frequency weighting is unspecified", "validTestRange": [30, 85], "resolution": 0.1 },
+    { "name": "co2_ppm", "dataType": "NUMERIC", "unit": "ppm", "meaning": "simulated carbon dioxide concentration", "validTestRange": [350, 2000], "resolution": 1 },
+    { "name": "window_open", "dataType": "BOOLEAN", "unit": null, "meaning": "window open/closed state" }
+  ],
+  "provenance": {
+    "indoorMeasurements": "synthetic, generated from a fixed seed and documented distributions",
+    "externalTemperature": "WeatherAPI history/current endpoint, recorded separately as shared external observations",
+    "energyModel": "synthetic interval deltas; assumed power values are workload-model parameters, not measured equipment performance",
+    "resolutionAndAccuracy": "quantization is a generator choice; no physical sensor calibration accuracy is claimed"
+  }
+}

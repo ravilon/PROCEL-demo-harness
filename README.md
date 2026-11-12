@@ -1,95 +1,55 @@
 # PROCEL Demo Harness
 
-Recebe eventos por HTTP, publica no broker MQTT e permite testar o listener do Procel-Telemetry remoto.
+Harness para publicar telemetria no broker MQTT do ambiente demonstrativo e registrar os resultados de carga. O HTTP `202` confirma somente o ACK do broker; persistencia e avaliacao no Proben precisam ser verificadas separadamente no banco e nas APIs.
 
-```text
-POST /publish -> HTTP publisher -> Mosquitto -> Procel-Telemetry (subscriber)
-```
+## Execucao reproduzivel
 
-## Rodar com Docker Compose
+`simulate-demo.mjs` publica uma mensagem por vez em taxa controlada. O inventario em `rooms-20261112-02.json` usa dez salas e dez sensores virtuais exclusivos. Cada amostra carrega as 13 medidas definidas em `measurement-specs.json`. Temperatura interna, ocupacao, estados de equipamentos e energia sao sinteticos; temperatura externa e media externa de sete dias sao observacoes WeatherAPI gravadas no contexto compartilhado do campus DEMO.
 
-Copie `.env.example` para `.env`, preencha `PUBLISH_API_KEY` com um valor longo e execute:
+Configure a chave do publisher apenas no ambiente do terminal:
 
 ```powershell
-docker compose up -d --build
+$env:PUBLISH_API_KEY = '<publisher key>'
+$env:PUBLISH_URL = 'http://187.77.58.122:3000/publish'
+$env:PUBLISH_PRODUCER_ID = 'tcc-demo-20261112-02'
+npm run simulate -- --run-id 20261112-02-r1 --rooms-file rooms-20261112-02.json --count 1000 --rate 5 --seed 20261112 --external-mean-c 18.23 --external-temperature-c 25.6 --course-id 1 --mission-id 68614b09-fbcd-4b69-9a67-559752a82c3c --output runs/tcc-20261112-02-r1
 ```
 
-O HTTP publisher escuta em `http://<servidor>:3000`. O Mosquitto escuta na porta `1883` do host e os containers se comunicam pela rede Docker. As portas MQTT e HTTP ficam acessiveis nas interfaces do servidor; restrinja TCP 1883 e 3000 no firewall a origens autorizadas. O `.env` deste projeto pode conter `PROCEL_MQTT_HOST` para o console antigo, mas o HTTP publisher usa `MQTT_URL=mqtt://mqtt:1883` dentro do Compose.
+Para execucoes de taxa diferentes, use novo `--run-id`, semente e pasta de saida, mantendo o mesmo inventario. `--dry-run` grava um relatorio sem publicar. Chaves nao devem ser salvas nos arquivos de execucao ou no repositorio.
 
-Envie um evento:
+## Dados e metricas
 
-```powershell
-$body = @{ producerId = 'demo'; sensorId = 'sensor-1'; payload = @{ temperature = 24.0 } } | ConvertTo-Json -Depth 5
-Invoke-RestMethod -Method Post -Uri 'http://localhost:3000/publish' -Headers @{ Authorization = "Bearer $env:PUBLISH_API_KEY" } -ContentType 'application/json' -Body $body
-```
+Cada pasta de execucao contem:
 
-Se a chave estiver apenas no arquivo `.env`, atribua-a tambem ao `$env:PUBLISH_API_KEY` no terminal que faz a requisicao. O endpoint gera `messageId` e `sourceTimestamp` se omitidos. O corpo tambem aceita esses campos:
+- `events.ndjson`: mensagem, resposta HTTP, latencia cliente-ao-publisher e trilha deterministica das regras do diagrama.
+- `summary.json`: contagem de ACKs, taxa alcancada, media, desvio padrao amostral, erro padrao, percentis e intervalo de Wilson para proporcao de ACKs.
+- `manifest.json`: parametros da carga, inventario, curso/missao e hash SHA-256 de `events.ndjson`.
+- `server-metrics.json`: conciliacao com os registros canonicos do backend, estados de ingestao, contagens de parametros e percentis de processamento no servidor.
 
-```json
-{
-  "producerId": "demo",
-  "sensorId": "sensor-1",
-  "messageId": "demo-001",
-  "sourceTimestamp": "2026-09-18T12:00:00Z",
-  "payload": { "temperature": 24.0 }
-}
-```
+O atraso de ponta a ponta e a taxa efetivamente persistida devem ser calculados por correlacao entre `messageId`, `raw_message_id`, `raw_source_timestamp`, `raw_received_at`, `api_received_at` e `medicao.timestamp` em `medicao_ingestao_metadata`/`medicao`. Nao interprete o ACK do broker como persistencia. Registre tambem repeticoes, rejeicoes, falhas e amostras por sala. Faça execucoes independentes para cada nivel de carga e informe as condicoes do host e a versao implantada.
 
-O app publica o envelope em `proben/telemetry/v1/{producerId}/{sensorId}/events` por padrão, com QoS 1 e sem retained. `MQTT_TOPIC_ROOT` permite alinhar o prefixo ao filtro do subscriber implantado. `202` confirma o ACK do broker, não a persistência no Telemetry. `GET /health` mostra se a conexão com o broker está ativa. Requisições a `/publish` exigem `Authorization: Bearer <PUBLISH_API_KEY>`.
+`room-rules.mjs` preserva a emulacao local dos fluxogramas: ocupacao, agenda, confirmacao, QR, conforto adaptativo, AC, setpoint, janelas, ruído, CO2 e ventilacao. Os predicados ambiguos do diagrama de pontos sao registrados sem inventar uma soma. Regras executaveis do backend sao cadastradas separadamente e suas execucoes devem ser exportadas junto aos resultados.
 
-## Campus demonstrativo e carga reproduzivel
+## Infraestrutura demo ja cadastrada
 
-`simulate-demo.mjs` gera telemetria para a sala existente `DEMO-ROOM-01` e o sensor `IDEALSENSOR_347` do campus de demonstração no ambiente de teste. Cada mensagem tem ID estável por semente e sequência, timestamp de origem e o payload esperado pelo perfil `IDEAL_SENSOR` (`messageId`, `timestamp`, `temperature`, `light`, `presence`). Use `DEMO_ROOM_ID` e `DEMO_SENSOR_ID` para selecionar outros recursos que já estejam cadastrados.
+Run tag remoto: `20261112-02`.
 
-O módulo `room-rules.mjs` emula localmente os fluxogramas de ocupação/atribuição e de ar-condicionado/ventilação. Ele registra em `events.ndjson` as decisões de uso agendado, ocupação, confirmação do professor, check-in QR, estado do AC, conforto adaptativo, janelas, ruído, CO₂, setpoint e alertas. Os valores do AC, janelas, ruído e CO₂ são somente entradas da emulação local; não são enviados como telemetria nem avaliados pelas regras do backend. Cada registro contém a trilha de regras e sua proveniência.
+- Campus: `DEMO`, coordenadas WeatherAPI de Pelotas.
+- Dez salas `TCCDEMO-20261112-02-R01` a `R10`, capacidade 40.
+- Um sensor virtual por sala, perfil MQTT proprio e 13 especificacoes de medidas.
+- Curso, disciplina, 20 alunos, agenda nas dez salas e uma missao com evento de gatilho por temperatura.
+- Contexto compartilhado WeatherAPI com serie horaria real de 7 dias; media ponderada observada de 18,23 °C e cobertura registrada de 167 h em uma janela de 168 h.
 
-A referência da temperatura neutra usa `Tn = 17.8 + 0.31 × Temed` e a faixa `Tn ± 3.5 °C`. O gerador usa `Temed = 17.5 °C` como valor sintético fixo, não como histórico real ou leitura da WeatherAPI. As faixas e pontos de setpoint/AC aparecem com conectores ambíguos no diagrama: o simulador guarda os predicados e os valores de pontos apresentados, mas não inventa um total. O diagrama de ocupação não define unidade para `TOTIME`, `COUNT` e `CICLO10`; por isso as sequências são registradas sem afirmar que representem minutos ou tempo real. As anotações de aula, missão e gatilho não criam registros de aula, atividades ou eventos no backend.
+Use `run-20261112-02.json`, `academic-20261112-02.json` e `mission-20261112-02.json` para os IDs de referencia. Arquivos de execucao sao experimentais; nao misture leituras externas com as geradas pelos sensores virtuais.
 
-Configure a chave somente no ambiente do terminal, sem colocá-la no repositório:
+O piloto `runs/tcc-20261112-02-pilot1` publicou 100 eventos a 5 eventos/s: 100 receberam HTTP 202, 100 foram persistidos e concluidos, com 1.300 valores de parametros. O atraso servidor medido entre `raw_received_at` e `api_received_at` teve media de 18,6848 s, p95 de 35,7551 s e p99 de 36,2888 s. Isso indica fila/atraso neste piloto; nao e resultado de capacidade. O relogio do cliente apresentou diferenca media de aproximadamente 128 ms, entao a latencia baseada em `sourceTimestamp` nao deve ser usada como latencia unidirecional. Consulte `sql/collect-run-metrics.sql` para obter as mesmas metricas por run.
 
-```powershell
-$env:PUBLISH_API_KEY = '<chave do publisher>'
-$env:PUBLISH_URL = 'http://localhost:3000/publish'
-npm run simulate -- --count 1000 --rate 10 --seed 20261112 --output runs/tcc-piloto-01
-```
+Os buckets agregados nao sao criados durante a ingestao. Eles exigem um job em `analytics_aggregation_job` e o worker `PROBEN_ANALYTICS_AGGREGATION_WORKER_ENABLED=true`; no staging consultado havia zero jobs e zero buckets. A pagina de Analises agora permite filtrar buckets por parametro ou modelo/tipo de sensor sem exigir sensor individual ou sala.
 
-Para gerar e conferir a forma dos registros sem rede, chave ou publicação, acrescente `--dry-run`.
+## Limpeza
 
-O gerador limita a taxa e envia uma mensagem por vez. `events.ndjson` guarda cada tentativa, status HTTP e latência cliente→publisher; `summary.json` informa taxa, percentis e intervalo Wilson de 95% da proporção de ACKs; `manifest.json` guarda parâmetros e hash SHA-256. Um HTTP `202` e essas latências representam somente o ACK MQTT do publisher. Para medir ingestão real, correlacione `messageId` com confirmação do Telemetry/banco e compute separadamente atraso de ponta a ponta, perda, duplicatas e taxa efetivamente persistida. Repetições independentes devem usar sementes diferentes e registrar carga, duração e versão do backend.
+`remove-demo-run.ps1` remove somente arquivos locais dentro de `runs`. Para apagar os dados remotos, use o SQL `sql/remove-demo-run.sql` somente depois de arquivar os resultados e conferir o preview exato do run tag. O script exige o identificador completo `20261112-02` e apaga somente registros com prefixos/nome desse run, na ordem das dependencias. Dados historicos WeatherAPI e campus DEMO foram adicionados ao banco de staging e tambem estao explicitamente escopados no SQL de limpeza.
 
-### Remoção e isolamento
+## Publisher local
 
-Os arquivos locais de uma execução podem ser apagados com:
-
-```powershell
-.\remove-demo-run.ps1 -RunDirectory '.\runs\tcc-piloto-01'
-```
-
-Isso remove somente artefatos locais do diretório validado. Mensagens já publicadas e dados persistidos pelo Telemetry não são removidos por esse script. Para evitar poluir dados reais, rode o campus demonstrativo em uma instância/banco de demonstração isolado que possa ser descartado integralmente após o TCC. Se for obrigatório compartilhar o banco, o backend precisa oferecer uma rotina administrativa de expurgo por prefixo que percorra medições e dependências; não apague linhas diretamente nem use sensores existentes.
-
-## Implantar no Coolify com Telemetry remoto
-
-1. Crie uma Application do repositorio usando o build pack **Docker Compose** e `compose.yaml`.
-2. Ative **Preserve Repository During Deployment**, pois `mosquitto.conf` e montado a partir do repositorio.
-3. Configure `PUBLISH_API_KEY` nas variaveis da Application e atribua um dominio HTTPS ao servico `publisher`, porta interna `3000`.
-4. Ative **Connect To Predefined Network** no recurso deste harness. O Telemetry e o broker precisam compartilhar a mesma rede Docker no mesmo servidor. Confira o hostname real do broker em **Show Deployable Compose**.
-5. No recurso do Telemetry, defina `PROCEL_TELEMETRY_MQTT_ENABLED=true`, `PROCEL_TELEMETRY_MQTT_BROKER_URL=tcp://<hostname-interno-do-broker>:1883` e `PROCEL_TELEMETRY_MQTT_TLS_ENABLED=false`. Depois, redeploy do Telemetry.
-6. Envie o `POST /publish` ao dominio HTTPS do publisher. A porta MQTT nao precisa ser aberta na internet.
-
-O Telemetry e apenas o subscriber; Mosquitto e o broker separado deste Compose. O perfil `staging` do Telemetry liga TLS por padrao, por isso a configuracao acima desliga TLS para a conexao privada deste broker de teste. Em producao, configure autenticacao e TLS no broker.
-
-### Se o publisher nao conectar ao broker
-
-- `HTTP publisher listening on 1883`: a variavel `PORT` do container publisher foi configurada como porta MQTT. O HTTP deve escutar em `3000`; o Compose deste repositorio define `PORT=3000`.
-- `getaddrinfo EAI_AGAIN mqtt`: o hostname `mqtt` nao esta resolvendo no container publisher. Confira se o recurso implantado no Coolify usa **Docker Compose** com os dois servicos `mqtt` e `publisher` ativos. Se o publisher foi implantado sozinho como uma Application Node/Dockerfile, `mqtt` nao existe na rede dele: implante o Compose completo ou configure `MQTT_URL` com o hostname interno real de um broker na rede compartilhada.
-- `connack timeout`: confira se o servico `mqtt` esta saudavel e se o publisher usa `mqtt://mqtt:1883` quando os dois estao no mesmo Compose. O endpoint HTTP `GET /health` retorna `mqttConnected: true` quando a conexao estiver pronta.
-
-## Console MQTT opcional
-
-O script `mqtt-console.ps1` ainda permite publicar diretamente em um broker. Para este Compose local:
-
-```powershell
-.\mqtt-console.ps1 -HostName localhost -Topic 'proben/telemetry/v1/demo/sensor-1/events' -PayloadFile 'payloads/normal-temperature.json'
-```
-
-Ele usa `mosquitto_pub` local, se instalado, ou executa o cliente dentro do servico `mqtt` deste Compose. Para broker externo, configure `PROCEL_MQTT_HOST` e `PROCEL_MQTT_PORT` em `.env`.
+O publisher local e broker podem ser iniciados por `docker compose up -d --build`. Copie `.env.example`, defina `PUBLISH_API_KEY` no ambiente de implantacao e mantenha a porta MQTT restrita a rede do Telemetry. `GET /health` informa se o publisher esta conectado ao broker.

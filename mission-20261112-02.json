@@ -1,0 +1,88 @@
+{
+    "missionId":  "68614b09-fbcd-4b69-9a67-559752a82c3c",
+    "eventId":  "10549c4e-760d-40ba-bfed-c7c178d6a40f",
+    "conditionId":  "56a7b144-8335-46c1-9f99-72a9d30e0003",
+    "runId":  "20261112-02",
+    "activities":  [
+                       {
+                           "activityId":  "4f7f4a8e-e8bb-440d-9b2a-7548ae055792",
+                           "studentId":  "tcc-demo-20261112-02-01"
+                       },
+                       {
+                           "activityId":  "88098f53-00b3-4174-a836-3d58e64083d6",
+                           "studentId":  "tcc-demo-20261112-02-02"
+                       },
+                       {
+                           "activityId":  "788cfa7f-66be-437e-9973-e343b7ec6d33",
+                           "studentId":  "tcc-demo-20261112-02-03"
+                       },
+                       {
+                           "activityId":  "11754dc7-c84b-4031-9579-c4968f9b560a",
+                           "studentId":  "tcc-demo-20261112-02-04"
+                       },
+                       {
+                           "activityId":  "467cb2e1-6f2b-409e-a111-39dace71b65b",
+                           "studentId":  "tcc-demo-20261112-02-05"
+                       },
+                       {
+                           "activityId":  "f6817bf0-788b-4d5d-b51c-26d93eabbeca",
+                           "studentId":  "tcc-demo-20261112-02-06"
+                       },
+                       {
+                           "activityId":  "77d8a732-8f83-4850-9b7d-df4d84d833b3",
+                           "studentId":  "tcc-demo-20261112-02-07"
+                       },
+                       {
+                           "activityId":  "42dc9a4f-d388-40bb-8f31-4fc435b2d347",
+                           "studentId":  "tcc-demo-20261112-02-08"
+                       },
+                       {
+                           "activityId":  "dc25ef67-888d-4533-a8cb-2f2d4c84b345",
+                           "studentId":  "tcc-demo-20261112-02-09"
+                       },
+                       {
+                           "activityId":  "bac58a82-b8ea-47a8-9ad2-d624100d50db",
+                           "studentId":  "tcc-demo-20261112-02-10"
+                       },
+                       {
+                           "activityId":  "c13be232-67df-44fe-890d-fca5658848c4",
+                           "studentId":  "tcc-demo-20261112-02-11"
+                       },
+                       {
+                           "activityId":  "02bbdb6c-165f-4b45-a4c2-11ee27574d5f",
+                           "studentId":  "tcc-demo-20261112-02-12"
+                       },
+                       {
+                           "activityId":  "aa688782-0fa4-40b2-9ee3-79946903d78e",
+                           "studentId":  "tcc-demo-20261112-02-13"
+                       },
+                       {
+                           "activityId":  "25a87ffb-4cc6-4295-a97d-94186a3e4d8a",
+                           "studentId":  "tcc-demo-20261112-02-14"
+                       },
+                       {
+                           "activityId":  "39e5dd29-a30f-4f6f-9afd-0f0a895506eb",
+                           "studentId":  "tcc-demo-20261112-02-15"
+                       },
+                       {
+                           "activityId":  "70f2fe85-b422-4201-b68a-b8000f3242bb",
+                           "studentId":  "tcc-demo-20261112-02-16"
+                       },
+                       {
+                           "activityId":  "490916a6-7342-43dd-8e69-7c3c5f5db69d",
+                           "studentId":  "tcc-demo-20261112-02-17"
+                       },
+                       {
+                           "activityId":  "421fb685-e4f4-41f5-aef0-15a45531ff11",
+                           "studentId":  "tcc-demo-20261112-02-18"
+                       },
+                       {
+                           "activityId":  "2b9544bd-c73b-48db-84e3-532c41b8ac7c",
+                           "studentId":  "tcc-demo-20261112-02-19"
+                       },
+                       {
+                           "activityId":  "a5c6cb68-d079-43c8-8f0d-4276e444e9ab",
+                           "studentId":  "tcc-demo-20261112-02-20"
+                       }
+                   ]
+}

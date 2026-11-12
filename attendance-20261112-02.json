@@ -1,0 +1,102 @@
+[
+    {
+        "roomId":  "TCCDEMO-20261112-02-R01",
+        "presenceId":  "34fdecc3-d4a1-4547-ace3-1e9f0bd977ef",
+        "studentId":  "tcc-demo-20261112-02-01"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R01",
+        "presenceId":  "ef758274-6496-4583-9765-908d652e152b",
+        "studentId":  "tcc-demo-20261112-02-02"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R02",
+        "presenceId":  "b2fd5269-bd60-4ad2-acad-ab2b2e5e4081",
+        "studentId":  "tcc-demo-20261112-02-03"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R02",
+        "presenceId":  "9bbf744d-7f78-489c-9adc-51de324af8f0",
+        "studentId":  "tcc-demo-20261112-02-04"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R03",
+        "presenceId":  "77d393c9-363e-41dc-84ed-2165103edfdb",
+        "studentId":  "tcc-demo-20261112-02-05"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R03",
+        "presenceId":  "5a7f236f-7e54-4fc2-b32f-d048e1ef9f7b",
+        "studentId":  "tcc-demo-20261112-02-06"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R04",
+        "presenceId":  "b05f1cfb-bc52-4541-a3b3-c738955d5970",
+        "studentId":  "tcc-demo-20261112-02-07"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R04",
+        "presenceId":  "6826d64e-33f0-4d20-9abe-2f36628a037b",
+        "studentId":  "tcc-demo-20261112-02-08"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R05",
+        "presenceId":  "e9de1a7f-3445-4b8d-b592-44cd080a4264",
+        "studentId":  "tcc-demo-20261112-02-09"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R05",
+        "presenceId":  "362f8710-a275-42c6-a26e-b575bd30e807",
+        "studentId":  "tcc-demo-20261112-02-10"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R06",
+        "presenceId":  "58b95c5a-76ae-4826-a85f-bf5e548157e9",
+        "studentId":  "tcc-demo-20261112-02-11"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R06",
+        "presenceId":  "e48f02c2-b1e5-48c8-b638-78706f777555",
+        "studentId":  "tcc-demo-20261112-02-12"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R07",
+        "presenceId":  "491c8628-06d8-481a-9a34-7782e036305b",
+        "studentId":  "tcc-demo-20261112-02-13"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R07",
+        "presenceId":  "ee4029ca-8e8b-4848-90fe-acecbb46a763",
+        "studentId":  "tcc-demo-20261112-02-14"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R08",
+        "presenceId":  "a199138c-1962-48ff-bce4-90c34b5c2a51",
+        "studentId":  "tcc-demo-20261112-02-15"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R08",
+        "presenceId":  "f786e19f-c34b-4ffe-9a8e-f6f6deb58b86",
+        "studentId":  "tcc-demo-20261112-02-16"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R09",
+        "presenceId":  "6eb7d262-241b-4466-8d9f-406716870375",
+        "studentId":  "tcc-demo-20261112-02-17"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R09",
+        "presenceId":  "55891f48-bad6-48b0-be9a-c88fb36307a1",
+        "studentId":  "tcc-demo-20261112-02-18"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R10",
+        "presenceId":  "eead1880-81a8-4aec-b8ad-efe4346e58da",
+        "studentId":  "tcc-demo-20261112-02-19"
+    },
+    {
+        "roomId":  "TCCDEMO-20261112-02-R10",
+        "presenceId":  "ac1668e9-e6e0-4449-a887-5e9881a7e5f3",
+        "studentId":  "tcc-demo-20261112-02-20"
+    }
+]

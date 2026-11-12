@@ -1,0 +1,33 @@
+﻿{
+  "runId": "20261112-02-pilot1",
+  "capturedAt": "2026-11-12T14:40:00Z",
+  "origin": "Hostinger staging PostgreSQL procel-analitical-db; filtered by original_producer_id=tcc-demo-20261112-02 and raw_message_id prefix tcc-demo-20261112-02-pilot1-",
+  "counts": {
+    "attemptedAtPublisher": 100,
+    "http202": 100,
+    "ingested": 100,
+    "uniqueMessageIds": 100,
+    "completed": 100,
+    "measurementsLinked": 100,
+    "parameterValues": 1300,
+    "expectedParameterValues": 1300
+  },
+  "serverProcessingDelaySeconds": {
+    "basis": "api_received_at minus raw_received_at, both server-side timestamps",
+    "mean": 18.6848,
+    "p50": 19.2642,
+    "p95": 35.7551,
+    "p99": 36.2888
+  },
+  "sourceClockSkewSeconds": {
+    "mean": -0.128,
+    "validForLatencyClaims": false,
+    "reason": "client scheduled source timestamps differ from the server clock by about 128 ms; do not use this field as one-way latency"
+  },
+  "aggregation": {
+    "jobsBeforeAggregationRequest": 0,
+    "numericBucketsAtCapture": 0,
+    "reason": "aggregation worker disabled by default and no asynchronous aggregation jobs created"
+  },
+  "interpretation": "Pilot smoke only: one 100-message run at 5 target messages/s. Server-side processing delay shows backlog in this environment; do not treat it as a capacity result or compare across rates until the aggregation/queue workload setup and clock synchronization are fixed."
+}

@@ -1,0 +1,25 @@
+{
+    "sensorType":  "TCC_DEMO_SENSOR_20261112-02",
+    "eventId":  "10549c4e-760d-40ba-bfed-c7c178d6a40f",
+    "disciplineId":  990002,
+    "roomCount":  10,
+    "externalAverage7dC":  18.23,
+    "profileId":  "820175a2-7d70-4d04-b021-a3648f5895f5",
+    "profileVersionId":  "df360eb6-d1a3-486a-9ef9-99d4452367eb",
+    "contextId":  "fd2d266e-b862-407b-9dd0-9edb41879cd2",
+    "externalCoverageHours":  167,
+    "integrationId":  "ec73c053-bac0-4c83-a31c-33a0afed3563",
+    "rules":  [
+                  "56a7b144-8335-46c1-9f99-72a9d30e0001",
+                  "56a7b144-8335-46c1-9f99-72a9d30e0002"
+              ],
+    "externalCurrentC":  25.6,
+    "missionId":  "68614b09-fbcd-4b69-9a67-559752a82c3c",
+    "courseId":  1,
+    "campus":  "DEMO",
+    "runId":  "20261112-02",
+    "externalParameterId":  "bd2a1394-bd4d-4991-a0b1-d225016a8a57",
+    "weatherObservedAt":  "2026-11-12T11:15:00-03:00",
+    "externalSensorId":  "TCCDEMO-20261112-02-EXT",
+    "students":  20
+}

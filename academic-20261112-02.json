@@ -1,0 +1,87 @@
+{
+    "courseName":  "TCC Demo 20261112-02",
+    "students":  [
+                     {
+                         "id":  "tcc-demo-20261112-02-01",
+                         "name":  "Aluno Demo 01"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-02",
+                         "name":  "Aluno Demo 02"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-03",
+                         "name":  "Aluno Demo 03"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-04",
+                         "name":  "Aluno Demo 04"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-05",
+                         "name":  "Aluno Demo 05"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-06",
+                         "name":  "Aluno Demo 06"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-07",
+                         "name":  "Aluno Demo 07"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-08",
+                         "name":  "Aluno Demo 08"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-09",
+                         "name":  "Aluno Demo 09"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-10",
+                         "name":  "Aluno Demo 10"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-11",
+                         "name":  "Aluno Demo 11"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-12",
+                         "name":  "Aluno Demo 12"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-13",
+                         "name":  "Aluno Demo 13"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-14",
+                         "name":  "Aluno Demo 14"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-15",
+                         "name":  "Aluno Demo 15"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-16",
+                         "name":  "Aluno Demo 16"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-17",
+                         "name":  "Aluno Demo 17"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-18",
+                         "name":  "Aluno Demo 18"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-19",
+                         "name":  "Aluno Demo 19"
+                     },
+                     {
+                         "id":  "tcc-demo-20261112-02-20",
+                         "name":  "Aluno Demo 20"
+                     }
+                 ],
+    "runId":  "20261112-02",
+    "courseId":  1
+}
