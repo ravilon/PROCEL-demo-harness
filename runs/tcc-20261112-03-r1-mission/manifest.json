@@ -1,0 +1,56 @@
+{
+  "createdAt": "2026-11-12T16:42:45.200Z",
+  "seed": 20261112031,
+  "runId": "20261112-03-r1-mission",
+  "count": 150,
+  "targetRatePerSecond": 2,
+  "targetQualificationAnomalyRate": 0.1,
+  "roomCount": 10,
+  "roomSensorMapping": [
+    {
+      "roomId": "TCCDEMO-20261112-02-R01",
+      "sensorId": "TCCDEMO-20261112-02-S01"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R02",
+      "sensorId": "TCCDEMO-20261112-02-S02"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R03",
+      "sensorId": "TCCDEMO-20261112-02-S03"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R04",
+      "sensorId": "TCCDEMO-20261112-02-S04"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R05",
+      "sensorId": "TCCDEMO-20261112-02-S05"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R06",
+      "sensorId": "TCCDEMO-20261112-02-S06"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R07",
+      "sensorId": "TCCDEMO-20261112-02-S07"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R08",
+      "sensorId": "TCCDEMO-20261112-02-S08"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R09",
+      "sensorId": "TCCDEMO-20261112-02-S09"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R10",
+      "sensorId": "TCCDEMO-20261112-02-S10"
+    }
+  ],
+  "courseId": "1",
+  "missionId": "c2d620fe-2e32-41bd-b01d-a185fc6f95ab",
+  "measurementSpecificationVersion": "tcc-demo-sensor-20261112-02-v1",
+  "hashAlgorithm": "SHA-256",
+  "hashSha256": "6664c5fadd37bd770e6e9ce0d042ff514675ea34f12df719f7cf977bdc720db8"
+}

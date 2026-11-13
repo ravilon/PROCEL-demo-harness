@@ -1,0 +1,71 @@
+{
+  "runId": "20261112-02-qualified-anomaly-r3",
+  "collectedAt": "2026-11-12T16:24:04.648Z",
+  "source": "authenticated per-sensor measurement API; only evaluations whose rule IDs belong to the run qualification group are counted",
+  "start": "2026-11-12T16:21:04.821Z",
+  "end": "2026-11-12T16:28:34.353Z",
+  "expectedCanonicalMeasurements": 300,
+  "canonicalMeasurementsReturned": 300,
+  "expectedParameterValues": 3900,
+  "qualificationGroupId": "c6ecc364-ddd8-4e35-aa57-c8d697f4c497",
+  "expectedQualifications": 3900,
+  "observedQualifications": 3900,
+  "resultsByStatus": {
+    "NORMAL": 3870,
+    "ALERTA": 30
+  },
+  "evaluationsByParameter": {
+    "temperature": {
+      "NORMAL": 292,
+      "ALERTA": 8
+    },
+    "presence": {
+      "NORMAL": 300
+    },
+    "light": {
+      "NORMAL": 300
+    },
+    "ac_status": {
+      "NORMAL": 300
+    },
+    "energy_ac": {
+      "NORMAL": 300
+    },
+    "energy_lighting": {
+      "NORMAL": 300
+    },
+    "energy_room_circuit": {
+      "NORMAL": 300
+    },
+    "energy_total_room": {
+      "NORMAL": 300
+    },
+    "ac_setpoint_c": {
+      "NORMAL": 300
+    },
+    "humidity_pct": {
+      "NORMAL": 292,
+      "ALERTA": 8
+    },
+    "noise_db": {
+      "NORMAL": 293,
+      "ALERTA": 7
+    },
+    "co2_ppm": {
+      "NORMAL": 293,
+      "ALERTA": 7
+    },
+    "window_open": {
+      "NORMAL": 300
+    }
+  },
+  "expectedSyntheticAnomaliesByParameter": {
+    "temperature": 8,
+    "humidity_pct": 8,
+    "noise_db": 7,
+    "co2_ppm": 7
+  },
+  "expectedAlertEvaluations": 30,
+  "reconciliationComplete": true,
+  "collectionAttempts": 1
+}

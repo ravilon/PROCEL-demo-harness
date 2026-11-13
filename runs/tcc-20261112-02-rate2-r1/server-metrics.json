@@ -1,0 +1,78 @@
+﻿{
+  "runId": "20261112-02-rate2-r1",
+  "startedAt": "2026-11-12T14:42:35.802Z",
+  "finishedAt": "2026-11-12T14:45:05.342Z",
+  "capturedAt": "2026-11-12T14:46:10Z",
+  "stagingOnly": true,
+  "broker": {
+    "attempted": 300,
+    "accepted202": 300,
+    "errors": 0,
+    "ackRate": 1,
+    "wilson95PercentCi": [
+      0.98735657,
+      1
+    ],
+    "targetRatePerSecond": 2,
+    "achievedRatePerSecond": 2.00616867,
+    "elapsedSeconds": 149.5388,
+    "clientLatencyMs": {
+      "mean": 31.9066,
+      "standardDeviation": 11.2734,
+      "standardError": 0.6509,
+      "p50": 29.793,
+      "p90": 33.86,
+      "p95": 36.054,
+      "p99": 95.561
+    }
+  },
+  "canonicalBackend": {
+    "ingestions": 300,
+    "uniqueMessageIds": 300,
+    "completed": 300,
+    "linkedMeasurements": 300,
+    "parameterValues": 3900,
+    "parameters": 13,
+    "rawReceiveSpanSeconds": 149.44,
+    "apiReceiveSpanSeconds": 161.7778,
+    "apiIngestRateEventsPerSecond": 1.8544,
+    "serverPostIngestionDelaySeconds": {
+      "mean": 10.5505,
+      "p50": 10.7923,
+      "p95": 18.2695,
+      "p99": 19.7343
+    },
+    "sourceClockSkewSecondsMean": -0.135,
+    "sourceClockSkewCanBeUsedAsOneWayLatency": false
+  },
+  "missionTrigger": {
+    "triggerOccurrencesBackedByThisRun": 82,
+    "processed": 82,
+    "studentProgressEventsFromThisRun": 0,
+    "explanation": "The demo mission activities had already been completed by the earlier smoke trigger; subsequent occurrences were processed but did not add progress to completed one-time activities. The smoke recorded 20 PROGRESSO and 20 CONCLUSAO activity-event records across the 20 demo students."
+  },
+  "context": {
+    "outsideTemperatureC": 25.6,
+    "sevenDayWeatherMeanC": 18.23,
+    "sevenDayObservedCoverageHours": 167,
+    "nominalCoverageHours": 168,
+    "weatherSource": "WeatherAPI persisted in shared context"
+  },
+  "aggregations": {
+    "jobs": 0,
+    "numericBuckets": 0,
+    "workerEnabled": false
+  },
+  "environmentRuleReadOnlyTests": {
+    "total": 20,
+    "satisfied": 10,
+    "notSatisfied": 10,
+    "distribution": "Both configured rules tested in all ten demo rooms at 2026-11-12T14:45:00Z; results in environment-rule-tests.json"
+  },
+  "notes": [
+    "HTTP 202 is publisher/broker ACK and is not backend persistence proof.",
+    "Server delay is computed only from server-side raw_received_at and api_received_at.",
+    "This is one 300-message replicate; it is not yet a multi-replicate capacity conclusion.",
+    "Virtual sensor readings are synthetic, not calibrated physical measurements."
+  ]
+}

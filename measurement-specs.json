@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "sensorType": "TCC_DEMO_SENSOR_20261112_01",
+  "sensorType": "TCC_DEMO_SENSOR_20261112-02",
   "synthetic": true,
   "physicalAccuracy": null,
   "sampling": {
@@ -29,5 +29,13 @@
     "externalTemperature": "WeatherAPI history/current endpoint, recorded separately as shared external observations",
     "energyModel": "synthetic interval deltas; assumed power values are workload-model parameters, not measured equipment performance",
     "resolutionAndAccuracy": "quantization is a generator choice; no physical sensor calibration accuracy is claimed"
+  },
+  "qualificationRules": {
+    "groupNamePattern": "TCC-DEMO-{runTag}-QUALIFICACAO-SENSORES",
+    "numeric": "BETWEEN validTestRange -> NORMAL; OUTSIDE validTestRange -> ALERTA",
+    "boolean": "EQ true and EQ false -> NORMAL; states are valid observations and are not intrinsically good or bad",
+    "assignment": "Active SensorGrupoRegra link from the demo group to each demo sensor",
+    "interpretation": "Synthetic data-quality/test ranges only; not physical calibration or room policy",
+    "anomalyScenario": "Inject 10% of messages evenly across the run, rotating temperature=31 C, humidity_pct=91%, noise_db=86 dB and co2_ppm=2001 ppm; these deliberately exceed test ranges and should qualify as ALERTA while ingestion remains accepted."
   }
 }

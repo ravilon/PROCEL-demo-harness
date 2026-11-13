@@ -1,0 +1,73 @@
+﻿{
+  "runId": "20261112-02-rate5-r1",
+  "startedAt": "2026-11-12T14:47:32.967Z",
+  "finishedAt": "2026-11-12T14:48:32.807Z",
+  "capturedAt": "2026-11-12T14:51:00Z",
+  "stagingOnly": true,
+  "broker": {
+    "attempted": 300,
+    "accepted202": 300,
+    "errors": 0,
+    "ackRate": 1,
+    "wilson95PercentCi": [
+      0.98735657,
+      1
+    ],
+    "targetRatePerSecond": 5,
+    "achievedRatePerSecond": 5.0135098,
+    "elapsedSeconds": 59.8383,
+    "clientLatencyMs": {
+      "mean": 31.4025,
+      "standardDeviation": 4.6164,
+      "standardError": 0.2665,
+      "p50": 30.476,
+      "p90": 33.976,
+      "p95": 37.114,
+      "p99": 48.212
+    }
+  },
+  "canonicalBackend": {
+    "ingestions": 300,
+    "uniqueMessageIds": 300,
+    "completed": 300,
+    "linkedMeasurements": 300,
+    "parameterValues": 3900,
+    "parameters": 13,
+    "rawReceiveSpanSeconds": 60,
+    "apiReceiveSpanSeconds": 161.1744,
+    "apiIngestRateEventsPerSecond": 1.8613,
+    "serverPostIngestionDelaySeconds": {
+      "mean": 53.5857,
+      "p50": 53.0487,
+      "p95": 102.2353,
+      "p99": 106.2335
+    },
+    "sourceClockSkewSecondsMean": -0.1396,
+    "sourceClockSkewCanBeUsedAsOneWayLatency": false
+  },
+  "missionTrigger": {
+    "triggerOccurrencesBackedByThisRun": 80,
+    "processed": 80,
+    "studentProgressEventsFromThisRun": 0,
+    "explanation": "The existing 20 demo-student activities were already completed by the earlier smoke trigger. The event engine processed 80 triggers for this load run."
+  },
+  "context": {
+    "outsideTemperatureC": 25.6,
+    "sevenDayWeatherMeanC": 18.23,
+    "sevenDayObservedCoverageHours": 167,
+    "nominalCoverageHours": 168,
+    "weatherSource": "WeatherAPI persisted in shared context"
+  },
+  "aggregations": {
+    "jobs": 0,
+    "numericBuckets": 0,
+    "workerEnabled": false
+  },
+  "notes": [
+    "HTTP 202 is publisher/broker ACK, not persistence proof.",
+    "Server delay uses raw_received_at and api_received_at only.",
+    "At 5 msg/s the backend completed the full run at 1.86 events/s, with a p95 delay of 102.24 s.",
+    "One replicate only; compare after repeated runs.",
+    "Virtual readings are synthetic and not physically calibrated."
+  ]
+}

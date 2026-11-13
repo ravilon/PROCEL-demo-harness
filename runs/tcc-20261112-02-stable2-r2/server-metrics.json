@@ -1,0 +1,72 @@
+﻿{
+  "runId": "20261112-02-stable2-r2",
+  "deploymentImageTag": "bf47724a7dd4fdd4aac4280b44b9060130762b5b3",
+  "deploymentStartedAt": "2026-11-12T14:52:24Z",
+  "startedAt": "2026-11-12T15:00:19.185Z",
+  "finishedAt": "2026-11-12T15:02:48.719Z",
+  "capturedAt": "2026-11-12 15:03:52 UTC",
+  "stagingOnly": true,
+  "broker": {
+    "attempted": 300,
+    "accepted202": 300,
+    "errors": 0,
+    "ackRate": 1,
+    "wilson95PercentCi": [
+      0.98735657,
+      1
+    ],
+    "targetRatePerSecond": 2,
+    "achievedRatePerSecond": 2.00625416,
+    "elapsedSeconds": 149.5324,
+    "clientLatencyMs": {
+      "n": 300,
+      "mean": 32.4589,
+      "standardDeviation": 13.8919,
+      "standardError": 0.802,
+      "p50": 30.126,
+      "p90": 35.585,
+      "p95": 39.41,
+      "p99": 70.267
+    }
+  },
+  "canonicalBackend": {
+    "ingestions": 300,
+    "uniqueMessageIds": 300,
+    "completed": 300,
+    "linkedMeasurements": 300,
+    "parameterValues": 3900,
+    "parameters": 13,
+    "apiReceiveSpanSeconds": 166.3125,
+    "apiIngestRateEventsPerSecond": 1.8038,
+    "serverPostIngestionDelaySeconds": {
+      "mean": 14.1214,
+      "p50": 13.1373,
+      "p95": 24.495,
+      "p99": 25.8803
+    },
+    "sourceClockSkewSecondsMean": -0.1433,
+    "sourceClockSkewValidOneWayLatency": false
+  },
+  "missionTrigger": {
+    "triggerOccurrencesBackedByThisRun": 84,
+    "processed": 84,
+    "progressEventsFromThisRun": 0,
+    "explanation": "One-time student activities had already completed during smoke."
+  },
+  "weatherContext": {
+    "currentOutsideC": 25.6,
+    "mean7dC": 18.23,
+    "observedCoverageHours": 167,
+    "source": "WeatherAPI shared context"
+  },
+  "aggregation": {
+    "jobs": 0,
+    "buckets": 0,
+    "workerEnabled": false
+  },
+  "notes": [
+    "HTTP 202 is publisher/broker ACK only.",
+    "All 300 accepted events completed into 3,900 canonical parameter-value rows.",
+    "One of three stable-deployment replicates at 2 msg/s."
+  ]
+}

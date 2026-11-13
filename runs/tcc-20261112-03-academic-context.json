@@ -1,0 +1,275 @@
+﻿{
+    "course":  {
+                   "id":  1,
+                   "nome":  "TCC Demo 20261112-02",
+                   "unidadeSigla":  "DEMO"
+               },
+    "experimentId":  "TCC-MISSION-END-TO-END-20261112-03",
+    "periods":  [
+                    {
+                        "id":  "9a1d0739-f5e0-43cf-9b2a-6d21fbf9ee39",
+                        "compartimentoId":  "TCCDEMO-20261112-02-R01",
+                        "compartimentoNome":  "Sala de Demo TCC 01",
+                        "disciplinaId":  990002,
+                        "disciplinaNome":  "TCC Demo 20261112-02",
+                        "data":  "2026-11-12",
+                        "turno":  1,
+                        "periodoAula":  1,
+                        "horaInicio":  "00:00:00",
+                        "horaFim":  "23:59:59",
+                        "turma":  "TCCDEMO-20261112-02",
+                        "tipo":  "AULA",
+                        "descricao":  "Simulated demo class for TCC load run 20261112-02",
+                        "source":  "TCC_DEMO_20261112_02",
+                        "sincronizadoEm":  "2026-11-12T14:20:04.744776Z"
+                    },
+                    {
+                        "id":  "48671322-a268-4f1e-8754-55143397c947",
+                        "compartimentoId":  "TCCDEMO-20261112-02-R02",
+                        "compartimentoNome":  "Sala de Demo TCC 02",
+                        "disciplinaId":  990002,
+                        "disciplinaNome":  "TCC Demo 20261112-02",
+                        "data":  "2026-11-12",
+                        "turno":  1,
+                        "periodoAula":  1,
+                        "horaInicio":  "00:00:00",
+                        "horaFim":  "23:59:59",
+                        "turma":  "TCCDEMO-20261112-02",
+                        "tipo":  "AULA",
+                        "descricao":  "Simulated demo class for TCC load run 20261112-02",
+                        "source":  "TCC_DEMO_20261112_02",
+                        "sincronizadoEm":  "2026-11-12T14:20:04.744776Z"
+                    },
+                    {
+                        "id":  "93866df9-d006-4f38-ab07-1ecf85253eed",
+                        "compartimentoId":  "TCCDEMO-20261112-02-R03",
+                        "compartimentoNome":  "Sala de Demo TCC 03",
+                        "disciplinaId":  990002,
+                        "disciplinaNome":  "TCC Demo 20261112-02",
+                        "data":  "2026-11-12",
+                        "turno":  1,
+                        "periodoAula":  1,
+                        "horaInicio":  "00:00:00",
+                        "horaFim":  "23:59:59",
+                        "turma":  "TCCDEMO-20261112-02",
+                        "tipo":  "AULA",
+                        "descricao":  "Simulated demo class for TCC load run 20261112-02",
+                        "source":  "TCC_DEMO_20261112_02",
+                        "sincronizadoEm":  "2026-11-12T14:20:04.744776Z"
+                    },
+                    {
+                        "id":  "e3a24f85-6996-421e-9882-344a068a13b9",
+                        "compartimentoId":  "TCCDEMO-20261112-02-R04",
+                        "compartimentoNome":  "Sala de Demo TCC 04",
+                        "disciplinaId":  990002,
+                        "disciplinaNome":  "TCC Demo 20261112-02",
+                        "data":  "2026-11-12",
+                        "turno":  1,
+                        "periodoAula":  1,
+                        "horaInicio":  "00:00:00",
+                        "horaFim":  "23:59:59",
+                        "turma":  "TCCDEMO-20261112-02",
+                        "tipo":  "AULA",
+                        "descricao":  "Simulated demo class for TCC load run 20261112-02",
+                        "source":  "TCC_DEMO_20261112_02",
+                        "sincronizadoEm":  "2026-11-12T14:20:04.744776Z"
+                    },
+                    {
+                        "id":  "28e0845c-3695-40cd-aa62-4ec5f98e7c5d",
+                        "compartimentoId":  "TCCDEMO-20261112-02-R05",
+                        "compartimentoNome":  "Sala de Demo TCC 05",
+                        "disciplinaId":  990002,
+                        "disciplinaNome":  "TCC Demo 20261112-02",
+                        "data":  "2026-11-12",
+                        "turno":  1,
+                        "periodoAula":  1,
+                        "horaInicio":  "00:00:00",
+                        "horaFim":  "23:59:59",
+                        "turma":  "TCCDEMO-20261112-02",
+                        "tipo":  "AULA",
+                        "descricao":  "Simulated demo class for TCC load run 20261112-02",
+                        "source":  "TCC_DEMO_20261112_02",
+                        "sincronizadoEm":  "2026-11-12T14:20:04.744776Z"
+                    },
+                    {
+                        "id":  "97f4d819-bccb-4406-8967-4424719563ac",
+                        "compartimentoId":  "TCCDEMO-20261112-02-R06",
+                        "compartimentoNome":  "Sala de Demo TCC 06",
+                        "disciplinaId":  990002,
+                        "disciplinaNome":  "TCC Demo 20261112-02",
+                        "data":  "2026-11-12",
+                        "turno":  1,
+                        "periodoAula":  1,
+                        "horaInicio":  "00:00:00",
+                        "horaFim":  "23:59:59",
+                        "turma":  "TCCDEMO-20261112-02",
+                        "tipo":  "AULA",
+                        "descricao":  "Simulated demo class for TCC load run 20261112-02",
+                        "source":  "TCC_DEMO_20261112_02",
+                        "sincronizadoEm":  "2026-11-12T14:20:04.744776Z"
+                    },
+                    {
+                        "id":  "23305ba3-1a6b-4c68-809b-3df3a600a706",
+                        "compartimentoId":  "TCCDEMO-20261112-02-R07",
+                        "compartimentoNome":  "Sala de Demo TCC 07",
+                        "disciplinaId":  990002,
+                        "disciplinaNome":  "TCC Demo 20261112-02",
+                        "data":  "2026-11-12",
+                        "turno":  1,
+                        "periodoAula":  1,
+                        "horaInicio":  "00:00:00",
+                        "horaFim":  "23:59:59",
+                        "turma":  "TCCDEMO-20261112-02",
+                        "tipo":  "AULA",
+                        "descricao":  "Simulated demo class for TCC load run 20261112-02",
+                        "source":  "TCC_DEMO_20261112_02",
+                        "sincronizadoEm":  "2026-11-12T14:20:04.744776Z"
+                    },
+                    {
+                        "id":  "69815840-104f-4425-825e-571053e52888",
+                        "compartimentoId":  "TCCDEMO-20261112-02-R08",
+                        "compartimentoNome":  "Sala de Demo TCC 08",
+                        "disciplinaId":  990002,
+                        "disciplinaNome":  "TCC Demo 20261112-02",
+                        "data":  "2026-11-12",
+                        "turno":  1,
+                        "periodoAula":  1,
+                        "horaInicio":  "00:00:00",
+                        "horaFim":  "23:59:59",
+                        "turma":  "TCCDEMO-20261112-02",
+                        "tipo":  "AULA",
+                        "descricao":  "Simulated demo class for TCC load run 20261112-02",
+                        "source":  "TCC_DEMO_20261112_02",
+                        "sincronizadoEm":  "2026-11-12T14:20:04.744776Z"
+                    },
+                    {
+                        "id":  "e06c9337-36ac-4940-a9b3-800567a24f5e",
+                        "compartimentoId":  "TCCDEMO-20261112-02-R09",
+                        "compartimentoNome":  "Sala de Demo TCC 09",
+                        "disciplinaId":  990002,
+                        "disciplinaNome":  "TCC Demo 20261112-02",
+                        "data":  "2026-11-12",
+                        "turno":  1,
+                        "periodoAula":  1,
+                        "horaInicio":  "00:00:00",
+                        "horaFim":  "23:59:59",
+                        "turma":  "TCCDEMO-20261112-02",
+                        "tipo":  "AULA",
+                        "descricao":  "Simulated demo class for TCC load run 20261112-02",
+                        "source":  "TCC_DEMO_20261112_02",
+                        "sincronizadoEm":  "2026-11-12T14:20:04.744776Z"
+                    },
+                    {
+                        "id":  "ece759d7-fb10-425c-b272-916948c7baa2",
+                        "compartimentoId":  "TCCDEMO-20261112-02-R10",
+                        "compartimentoNome":  "Sala de Demo TCC 10",
+                        "disciplinaId":  990002,
+                        "disciplinaNome":  "TCC Demo 20261112-02",
+                        "data":  "2026-11-12",
+                        "turno":  1,
+                        "periodoAula":  1,
+                        "horaInicio":  "00:00:00",
+                        "horaFim":  "23:59:59",
+                        "turma":  "TCCDEMO-20261112-02",
+                        "tipo":  "AULA",
+                        "descricao":  "Simulated demo class for TCC load run 20261112-02",
+                        "source":  "TCC_DEMO_20261112_02",
+                        "sincronizadoEm":  "2026-11-12T14:20:04.744776Z"
+                    }
+                ],
+    "openDemoAttendanceRecords":  10,
+    "discipline":  {
+                       "value":  [
+                                     {
+                                         "id":  990002,
+                                         "nome":  "TCC Demo 20261112-02",
+                                         "unidadeSigla":  "DEMO"
+                                     }
+                                 ],
+                       "Count":  1
+                   },
+    "eligibleEnrollments":  [
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-01"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-02"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-03"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-04"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-05"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-06"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-07"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-08"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-09"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-10"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-11"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-12"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-13"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-14"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-15"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-16"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-17"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-18"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-19"
+                                },
+                                {
+                                    "activeCourseDiscipline":  true,
+                                    "personId":  "tcc-demo-20261112-02-20"
+                                }
+                            ],
+    "note":  "Trigger processing used the active room period and enrolled students; existing check-ins were observed and left unchanged.",
+    "capturedAt":  "2026-11-12T16:52:16.0736833+00:00"
+}

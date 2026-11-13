@@ -1,0 +1,72 @@
+﻿{
+  "runId": "20261112-02-stable2-r1",
+  "deploymentImageTag": "bf47724a7dd4fdd4aac4280b44b9060130762b5b3",
+  "deploymentStartedAt": "2026-11-12T14:52:24Z",
+  "startedAt": "2026-11-12T14:56:58.154Z",
+  "finishedAt": "2026-11-12T14:59:27.696Z",
+  "capturedAt": "2026-11-12 15:00:12 UTC",
+  "stagingOnly": true,
+  "broker": {
+    "attempted": 300,
+    "accepted202": 300,
+    "errors": 0,
+    "ackRate": 1,
+    "wilson95PercentCi": [
+      0.98735657,
+      1
+    ],
+    "targetRatePerSecond": 2,
+    "achievedRatePerSecond": 2.0061343,
+    "elapsedSeconds": 149.5413,
+    "clientLatencyMs": {
+      "n": 300,
+      "mean": 29.9439,
+      "standardDeviation": 5.2545,
+      "standardError": 0.3034,
+      "p50": 28.97,
+      "p90": 32.303,
+      "p95": 33.928,
+      "p99": 40.397
+    }
+  },
+  "canonicalBackend": {
+    "ingestions": 300,
+    "uniqueMessageIds": 300,
+    "completed": 300,
+    "linkedMeasurements": 300,
+    "parameterValues": 3900,
+    "parameters": 13,
+    "apiReceiveSpanSeconds": 164.1071,
+    "apiIngestRateEventsPerSecond": 1.8281,
+    "serverPostIngestionDelaySeconds": {
+      "mean": 9.8232,
+      "p50": 10.0794,
+      "p95": 16.595,
+      "p99": 17.6593
+    },
+    "sourceClockSkewSecondsMean": -0.1432,
+    "sourceClockSkewValidOneWayLatency": false
+  },
+  "missionTrigger": {
+    "triggerOccurrencesBackedByThisRun": 86,
+    "processed": 86,
+    "progressEventsFromThisRun": 0,
+    "explanation": "One-time student activities were already complete from the smoke run; triggers were processed."
+  },
+  "weatherContext": {
+    "currentOutsideC": 25.6,
+    "mean7dC": 18.23,
+    "observedCoverageHours": 167,
+    "source": "WeatherAPI integration stored in shared context"
+  },
+  "aggregation": {
+    "jobs": 0,
+    "buckets": 0,
+    "workerEnabled": false
+  },
+  "notes": [
+    "HTTP 202 is publisher/broker acknowledgment only.",
+    "A UI query by sensorTypeName and a separate query by parameterDefId both returned HTTP 200 on this deployment, each with zero results because there are no aggregation jobs/buckets.",
+    "This is a single replicate; stable load comparison requires additional repeats."
+  ]
+}

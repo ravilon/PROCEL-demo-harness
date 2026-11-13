@@ -1,0 +1,152 @@
+{
+  "output": "C:\\GitHub\\PROCEL-demo-harness\\runs\\tcc-20261112-02-qualified-anomaly-r1",
+  "seed": 2026111212,
+  "startedAt": "2026-11-12T16:12:30.763Z",
+  "finishedAt": "2026-11-12T16:15:00.304Z",
+  "endpoint": "http://187.77.58.122:3000/publish",
+  "dryRun": false,
+  "publisherAckOnly": true,
+  "count": 300,
+  "targetRatePerSecond": 2,
+  "targetQualificationAnomalyRate": 0.1,
+  "elapsedSeconds": 149.54012350000002,
+  "producerId": "tcc-demo-20261112-02",
+  "attempted": 300,
+  "brokerAcknowledged": 300,
+  "failed": 0,
+  "brokerAckRate": 1,
+  "brokerAckRate95PercentWilsonCI": [
+    0.9873565700022643,
+    0.9999999999999999
+  ],
+  "achievedRatePerSecond": 2.006150543268743,
+  "clientLatencyMs": {
+    "n": 300,
+    "mean": 34.19794333333331,
+    "sampleStandardDeviation": 25.503392332950863,
+    "standardError": 1.4724390428677818,
+    "p50": 30.504,
+    "p90": 33.93,
+    "p95": 37.973,
+    "p99": 98.081
+  },
+  "interpretation": "Client latency and HTTP 202 measure the publisher-to-MQTT-broker acknowledgement only. They do not establish Telemetry persistence or backend processing.",
+  "runId": "20261112-02-qualified-anomaly-r1",
+  "simulatedClassesMissionsTriggersAreAnnotationsOnly": false,
+  "roomRulesEvaluatedLocally": true,
+  "roomRuleVersion": "room-flowcharts-emulation-v1",
+  "sensorRuleQualification": {
+    "groupId": "c6ecc364-ddd8-4e35-aa57-c8d697f4c497",
+    "groupName": "TCC-DEMO-20261112-02-QUALIFICACAO-SENSORES",
+    "activeRules": 26,
+    "parameterDefinitions": 13,
+    "linkedSensors": 10,
+    "expectedEvaluationsPerMeasurement": 13,
+    "specificationSource": "measurement-specs.json; synthetic validation ranges, no physical calibration claim",
+    "expectedAlertEvaluations": 30,
+    "injectedOutOfRangeSamplesByParameter": {
+      "temperature": 8,
+      "humidity_pct": 8,
+      "noise_db": 7,
+      "co2_ppm": 7
+    },
+    "semanticNote": "ALERTA is a rule qualification result for an intentionally out-of-range synthetic value. The measurement remains expected to be accepted and persisted by ingestion."
+  },
+  "measurementSpecificationVersion": "tcc-demo-sensor-20261112-02-v1",
+  "measurementSpecification": {
+    "source": "measurement-specs.json; all indoor/room readings synthetic, external temperature and seven-day average from WeatherAPI",
+    "energy": "per-event kWh increments computed from assumed 1.5 kW AC, 0.12 kW lighting and 0.08 kW other loads over room sampling interval",
+    "sensorParametersSent": [
+      "light",
+      "presence",
+      "temperature",
+      "ac_status",
+      "energy_ac",
+      "energy_lighting",
+      "energy_room_circuit",
+      "energy_total_room",
+      "ac_setpoint_c",
+      "humidity_pct",
+      "noise_db",
+      "co2_ppm",
+      "window_open"
+    ],
+    "envelopeFields": [
+      "messageId",
+      "timestamp"
+    ],
+    "sampling": {
+      "targetRateAcrossAllRoomsPerSecond": 2,
+      "timestamps": "scheduled source time, evenly spaced across all rooms"
+    },
+    "calibrationAccuracy": "not applicable to virtual sensors; generated values are synthetic and make no physical accuracy claim"
+  },
+  "externalMean7dC": {
+    "value": 18.23,
+    "provenance": "WeatherAPI external observations stored through the shared-context integration; seven-day weighted mean"
+  },
+  "externalTemperatureC": {
+    "value": 25.6,
+    "provenance": "WeatherAPI current observation stored through the shared-context integration"
+  },
+  "ruleScoreAggregation": "not calculated because diagram connectors do not unambiguously define cumulative points",
+  "roomRuleOutcomeAndAlertCounts": {
+    "MONITORAR_COM_PONTOS": 240,
+    "alert:JANELA_ABERTA_COM_AC_LIGADO": 70,
+    "alert:AR_CONDICIONADO_DESNECESSARIO": 220,
+    "SEM_ATRIBUICAO_DE_PONTOS": 60,
+    "alert:PRIORIZAR_VENTILACAO_NATURAL": 1
+  },
+  "qualificationScenarios": {
+    "withinSyntheticRange": 270,
+    "temperature": 8,
+    "humidity_pct": 8,
+    "noise_db": 7,
+    "co2_ppm": 7
+  },
+  "roomSensorMapping": [
+    {
+      "roomId": "TCCDEMO-20261112-02-R01",
+      "sensorId": "TCCDEMO-20261112-02-S01"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R02",
+      "sensorId": "TCCDEMO-20261112-02-S02"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R03",
+      "sensorId": "TCCDEMO-20261112-02-S03"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R04",
+      "sensorId": "TCCDEMO-20261112-02-S04"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R05",
+      "sensorId": "TCCDEMO-20261112-02-S05"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R06",
+      "sensorId": "TCCDEMO-20261112-02-S06"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R07",
+      "sensorId": "TCCDEMO-20261112-02-S07"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R08",
+      "sensorId": "TCCDEMO-20261112-02-S08"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R09",
+      "sensorId": "TCCDEMO-20261112-02-S09"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R10",
+      "sensorId": "TCCDEMO-20261112-02-S10"
+    }
+  ],
+  "courseId": "1",
+  "missionId": "68614b09-fbcd-4b69-9a67-559752a82c3c",
+  "sensorQualificationGroupId": "c6ecc364-ddd8-4e35-aa57-c8d697f4c497"
+}

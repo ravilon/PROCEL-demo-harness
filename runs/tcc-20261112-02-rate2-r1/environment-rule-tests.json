@@ -1,0 +1,132 @@
+﻿{
+  "runId": "20261112-02-rate2-r1",
+  "evaluatedAt": "2026-11-12T14:45:00Z",
+  "kind": "read-only environment rule tests",
+  "total": 20,
+  "counts": {
+    "SATISFIED": 10,
+    "NOT_SATISFIED": 10
+  },
+  "results": [
+    {
+      "roomId": "TCCDEMO-20261112-02-R01",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0001",
+      "result": "SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R02",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0001",
+      "result": "SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R03",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0001",
+      "result": "SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R04",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0001",
+      "result": "SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R05",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0001",
+      "result": "SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R06",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0001",
+      "result": "SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R07",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0001",
+      "result": "SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R08",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0001",
+      "result": "SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R09",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0001",
+      "result": "SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R10",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0001",
+      "result": "SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R01",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0002",
+      "result": "NOT_SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R02",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0002",
+      "result": "NOT_SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R03",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0002",
+      "result": "NOT_SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R04",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0002",
+      "result": "NOT_SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R05",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0002",
+      "result": "NOT_SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R06",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0002",
+      "result": "NOT_SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R07",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0002",
+      "result": "NOT_SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R08",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0002",
+      "result": "NOT_SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R09",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0002",
+      "result": "NOT_SATISFIED",
+      "reason": null
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R10",
+      "ruleId": "56a7b144-8335-46c1-9f99-72a9d30e0002",
+      "result": "NOT_SATISFIED",
+      "reason": null
+    }
+  ]
+}

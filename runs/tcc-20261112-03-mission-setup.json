@@ -1,0 +1,67 @@
+﻿{
+    "missionId":  "99d7b27a-34e5-4840-a464-2046a6c94bf6",
+    "runId":  "20261112-03",
+    "createdAt":  "2026-11-12T16:38:59.9769480+00:00",
+    "trigger":  "MEDICAO_RECEBIDA/INSTANTANEO",
+    "activitiesAssigned":  20,
+    "condition":  {
+                      "operator":  "GTE",
+                      "parameterDefinitionId":  "ebc0f250-82e7-4546-898c-17eaa65478fe",
+                      "thresholdC":  25,
+                      "parameter":  "temperature"
+                  },
+    "disciplineId":  990002,
+    "courseId":  1,
+    "activeEnrollmentsAdded":  0,
+    "workerStatus":  {
+                         "evaluation":  {
+                                            "enabled":  true,
+                                            "fixedDelay":  "PT5S",
+                                            "batchSize":  20,
+                                            "leaseDuration":  "PT1M",
+                                            "maxAttempts":  5,
+                                            "backlog":  0
+                                        },
+                         "temporalWindows":  {
+                                                 "enabled":  true,
+                                                 "fixedDelay":  "PT5S",
+                                                 "batchSize":  20,
+                                                 "leaseDuration":  "PT1M",
+                                                 "maxAttempts":  5,
+                                                 "backlog":  0
+                                             },
+                         "drools":  {
+                                        "selectedRuleEngine":  "SIMPLE",
+                                        "temporalDroolsEnabled":  false,
+                                        "temporalActivitiesEnabled":  false,
+                                        "maxFactsPerEvaluation":  5000,
+                                        "maxCacheEntries":  200,
+                                        "cacheExpiration":  "PT30M",
+                                        "evaluationTimeout":  "PT5S",
+                                        "maximumSampleGap":  "PT5M"
+                                    }
+                     },
+    "studentIds":  [
+                       "tcc-demo-20261112-02-01",
+                       "tcc-demo-20261112-02-02",
+                       "tcc-demo-20261112-02-03",
+                       "tcc-demo-20261112-02-04",
+                       "tcc-demo-20261112-02-05",
+                       "tcc-demo-20261112-02-06",
+                       "tcc-demo-20261112-02-07",
+                       "tcc-demo-20261112-02-08",
+                       "tcc-demo-20261112-02-09",
+                       "tcc-demo-20261112-02-10",
+                       "tcc-demo-20261112-02-11",
+                       "tcc-demo-20261112-02-12",
+                       "tcc-demo-20261112-02-13",
+                       "tcc-demo-20261112-02-14",
+                       "tcc-demo-20261112-02-15",
+                       "tcc-demo-20261112-02-16",
+                       "tcc-demo-20261112-02-17",
+                       "tcc-demo-20261112-02-18",
+                       "tcc-demo-20261112-02-19",
+                       "tcc-demo-20261112-02-20"
+                   ],
+    "eventId":  "192df52e-2aa2-4da0-b9e6-8b60842a4abe"
+}

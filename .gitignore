@@ -4,7 +4,10 @@ payloads/demo-*.json
 node_modules/
 !/runs/
 runs/*
-!/runs/tcc-20261112-02-pilot1/
-!runs/tcc-20261112-02-pilot1/**
+!/runs/tcc-20261112-02-*/
+!runs/tcc-20261112-02-*/**
+!/runs/tcc-20261112-03-*
+!runs/tcc-20261112-03-*/**
+runs/tcc-20261112-02-drycheck/
 test.ps1
 .env.hostinger-test.local

@@ -4,6 +4,7 @@
 -- psql ... -v run_id='20261112-02-r2-rep1' \
 --   -v producer_id='tcc-demo-20261112-02' \
 --   -v event_id='10549c4e-760d-40ba-bfed-c7c178d6a40f' \
+--   -v qualification_group_id='c6ecc364-ddd8-4e35-aa57-c8d697f4c497' \
 --   -f sql/collect-run-metrics.sql
 -- Run only against the staging database and preserve every result with the run.
 
@@ -61,6 +62,22 @@ WHERE metadata.original_producer_id = :'producer_id'
   AND metadata.raw_message_id LIKE 'tcc-demo-' || :'run_id' || '-%'
 GROUP BY parameter.id, parameter.nome, parameter.numeric_unit
 ORDER BY parameter.nome;
+
+\echo '=== evaluations produced by the sensor qualification group ==='
+SELECT evaluation.resultado,
+       count(*) AS evaluations,
+       count(DISTINCT value.id) AS parameter_values_evaluated,
+       count(DISTINCT measurement.id) AS measurements_evaluated
+FROM medicao_ingestao_metadata metadata
+JOIN medicao measurement ON measurement.id = metadata.medicao_id
+JOIN parametro_valor value ON value.medicao_id = measurement.id
+JOIN avaliacao_parametro_valor evaluation ON evaluation.parametro_valor_id = value.id
+JOIN regra_parametro rule ON rule.id = evaluation.regra_parametro_id
+WHERE metadata.original_producer_id = :'producer_id'
+  AND metadata.raw_message_id LIKE 'tcc-demo-' || :'run_id' || '-%'
+  AND rule.grupo_regra_id = :'qualification_group_id'::uuid
+GROUP BY evaluation.resultado
+ORDER BY evaluation.resultado;
 
 \echo '=== mission event occurrences ==='
 SELECT status, count(*) AS occurrences,

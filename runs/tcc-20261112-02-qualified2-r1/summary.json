@@ -1,0 +1,134 @@
+{
+  "seed": 2026111210,
+  "startedAt": "2026-11-12T15:43:29.070Z",
+  "finishedAt": "2026-11-12T16:04:34.547Z",
+  "endpoint": "http://187.77.58.122:3000/publish",
+  "dryRun": false,
+  "publisherAckOnly": true,
+  "count": 300,
+  "targetRatePerSecond": 2,
+  "elapsedSeconds": 1265.4764449999998,
+  "producerId": "tcc-demo-20261112-02",
+  "attempted": 300,
+  "brokerAcknowledged": 300,
+  "failed": 0,
+  "brokerAckRate": 1,
+  "brokerAckRate95PercentWilsonCI": [
+    0.9873565700022643,
+    0.9999999999999999
+  ],
+  "achievedRatePerSecond": 0.23706486294970117,
+  "clientLatencyMs": {
+    "n": 300,
+    "mean": 37.70094333333336,
+    "sampleStandardDeviation": 21.397207133107642,
+    "standardError": 1.2353683298205878,
+    "p50": 30.567,
+    "p90": 55.706,
+    "p95": 77.504,
+    "p99": 133.831
+  },
+  "interpretation": "Client latency and HTTP 202 measure the publisher-to-MQTT-broker acknowledgement only. They do not establish Telemetry persistence or backend processing.",
+  "runId": "20261112-02-qualified2-r1",
+  "simulatedClassesMissionsTriggersAreAnnotationsOnly": false,
+  "roomRulesEvaluatedLocally": true,
+  "roomRuleVersion": "room-flowcharts-emulation-v1",
+  "sensorRuleQualification": {
+    "groupId": "c6ecc364-ddd8-4e35-aa57-c8d697f4c497",
+    "groupName": "TCC-DEMO-20261112-02-QUALIFICACAO-SENSORES",
+    "activeRules": 26,
+    "parameterDefinitions": 13,
+    "linkedSensors": 10,
+    "expectedEvaluationsPerMeasurement": 13,
+    "specificationSource": "measurement-specs.json; synthetic validation ranges, no physical calibration claim"
+  },
+  "measurementSpecificationVersion": "tcc-demo-sensor-20261112-02-v1",
+  "measurementSpecification": {
+    "source": "measurement-specs.json; all indoor/room readings synthetic, external temperature and seven-day average from WeatherAPI",
+    "energy": "per-event kWh increments computed from assumed 1.5 kW AC, 0.12 kW lighting and 0.08 kW other loads over room sampling interval",
+    "sensorParametersSent": [
+      "light",
+      "presence",
+      "temperature",
+      "ac_status",
+      "energy_ac",
+      "energy_lighting",
+      "energy_room_circuit",
+      "energy_total_room",
+      "ac_setpoint_c",
+      "humidity_pct",
+      "noise_db",
+      "co2_ppm",
+      "window_open"
+    ],
+    "envelopeFields": [
+      "messageId",
+      "timestamp"
+    ],
+    "sampling": {
+      "targetRateAcrossAllRoomsPerSecond": 2,
+      "timestamps": "scheduled source time, evenly spaced across all rooms"
+    },
+    "calibrationAccuracy": "not applicable to virtual sensors; generated values are synthetic and make no physical accuracy claim"
+  },
+  "externalMean7dC": {
+    "value": 18.23,
+    "provenance": "WeatherAPI external observations stored through the shared-context integration; seven-day weighted mean"
+  },
+  "externalTemperatureC": {
+    "value": 25.6,
+    "provenance": "WeatherAPI current observation stored through the shared-context integration"
+  },
+  "ruleScoreAggregation": "not calculated because diagram connectors do not unambiguously define cumulative points",
+  "roomRuleOutcomeAndAlertCounts": {
+    "MONITORAR_COM_PONTOS": 240,
+    "alert:JANELA_ABERTA_COM_AC_LIGADO": 70,
+    "alert:AR_CONDICIONADO_DESNECESSARIO": 220,
+    "SEM_ATRIBUICAO_DE_PONTOS": 60
+  },
+  "roomSensorMapping": [
+    {
+      "roomId": "TCCDEMO-20261112-02-R01",
+      "sensorId": "TCCDEMO-20261112-02-S01"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R02",
+      "sensorId": "TCCDEMO-20261112-02-S02"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R03",
+      "sensorId": "TCCDEMO-20261112-02-S03"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R04",
+      "sensorId": "TCCDEMO-20261112-02-S04"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R05",
+      "sensorId": "TCCDEMO-20261112-02-S05"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R06",
+      "sensorId": "TCCDEMO-20261112-02-S06"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R07",
+      "sensorId": "TCCDEMO-20261112-02-S07"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R08",
+      "sensorId": "TCCDEMO-20261112-02-S08"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R09",
+      "sensorId": "TCCDEMO-20261112-02-S09"
+    },
+    {
+      "roomId": "TCCDEMO-20261112-02-R10",
+      "sensorId": "TCCDEMO-20261112-02-S10"
+    }
+  ],
+  "courseId": "1",
+  "missionId": "68614b09-fbcd-4b69-9a67-559752a82c3c",
+  "sensorQualificationGroupId": "c6ecc364-ddd8-4e35-aa57-c8d697f4c497"
+}
